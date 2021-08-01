@@ -16,6 +16,7 @@ class App extends Component {
 
     this.bookFormChanges = this.bookFormChanges.bind(this);
     this.addButtonClick = this.addButtonClick.bind(this);
+    this.removeBookClick = this.removeBookClick.bind(this);
   }
 
   bookFormChanges(key, value) {
@@ -42,12 +43,12 @@ class App extends Component {
     });
   }
 
-  removeBook(index) {
-    const bookshelfCopy = [...this.state.bookshelf];
-    bookshelfCopy.splice(index, 1);
+  removeBookClick(index) {
+    const booksCopy = [...this.state.books];
+    booksCopy.splice(index, 1);
 
     this.setState({
-      bookshelf: bookshelfCopy,
+      books: booksCopy,
     });
   }
 
@@ -62,7 +63,7 @@ class App extends Component {
           pages={this.state.pages}
           read={this.state.read}
         />
-        <Bookshelf books={this.state.books} />
+        <Bookshelf books={this.state.books} removeBookClick={this.removeBookClick}/>
       </div>
     );
   }
