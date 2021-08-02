@@ -13,7 +13,12 @@ function Bookshelf(props) {
 
       {
         props.books.map((book, index) => {
-          return <Book key={index} book={book} removeBookClick={props.removeBookClick}/>
+          return <Book 
+                   key={index}
+                   book={book}
+                   removeBookClick={props.removeBookClick}
+                   submitBookEdit={props.submitBookEdit}
+                  />
         })
       }
     </div>

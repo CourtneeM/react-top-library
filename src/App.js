@@ -17,6 +17,7 @@ class App extends Component {
     this.bookFormChanges = this.bookFormChanges.bind(this);
     this.addButtonClick = this.addButtonClick.bind(this);
     this.removeBookClick = this.removeBookClick.bind(this);
+    this.submitBookEdit = this.submitBookEdit.bind(this);
   }
 
   bookFormChanges(key, value) {
@@ -52,6 +53,15 @@ class App extends Component {
     });
   }
 
+  submitBookEdit(index, title, author, pages, read) {
+    const booksCopy = [...this.state.books];
+    booksCopy.splice(index, 1, {title, author, pages, read});
+    
+    this.setState({
+      books: booksCopy
+    });
+  }
+
   render() {
     return (
       <div>
@@ -63,7 +73,7 @@ class App extends Component {
           pages={this.state.pages}
           read={this.state.read}
         />
-        <Bookshelf books={this.state.books} removeBookClick={this.removeBookClick}/>
+        <Bookshelf books={this.state.books} removeBookClick={this.removeBookClick} submitBookEdit={this.submitBookEdit} />
       </div>
     );
   }
