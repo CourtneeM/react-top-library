@@ -27,11 +27,11 @@ class Book extends Component {
 
   displayEditBook() {
     return (
-      <div>
-        <input type="text" value={this.state.editTitle} onChange={e => this.setState({editTitle: e.target.value})} />
-        <input type="text" value={this.state.editAuthor} onChange={e => this.setState({editAuthor: e.target.value})} />
-        <input type="number" value={this.state.editPages} onChange={e => this.setState({editPages: e.target.value})} />
-        <input type="checkbox" checked={this.state.editRead} onChange={e => this.setState({editRead: e.target.checked})} />
+      <div style={styles.book}>
+        <input type="text" value={this.state.editTitle} onChange={e => this.setState({editTitle: e.target.value})} style={styles.bookItem} />
+        <input type="text" value={this.state.editAuthor} onChange={e => this.setState({editAuthor: e.target.value})} style={styles.bookItem} />
+        <input type="number" value={this.state.editPages} onChange={e => this.setState({editPages: e.target.value})} style={styles.bookItem} />
+        <input type="checkbox" checked={this.state.editRead} onChange={e => this.setState({editRead: e.target.checked})} style={styles.bookItem} />
         <button onClick={e => {
           const index = [...e.target.parentElement.parentElement.children].indexOf(e.target.parentElement) - 1;
 

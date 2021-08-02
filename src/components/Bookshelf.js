@@ -9,6 +9,7 @@ function Bookshelf(props) {
         <p style={styles.bookshelfHeaderItems}>Author</p>
         <p style={styles.bookshelfHeaderItems}>Pages</p>
         <p style={styles.bookshelfHeaderItems}>Read Status</p>
+        <p style={styles.bookshelfHeaderItems}></p>
       </div>
 
       {
